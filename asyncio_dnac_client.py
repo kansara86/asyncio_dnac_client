@@ -100,11 +100,13 @@ if __name__ == '__main__':
         config.read(config_file)
 
         dnac_sess = DnacHttpSession(host=config['DNAC']['Host'], username=config['DNAC']['Username'], password=config['DNAC']['Password'])
-        project_resp = dnac_sess.create_rest_api_tasks([
+        task_response_list = dnac_sess.create_rest_api_tasks([
             ('GET', '/dna/intent/api/v1/template-programmer/project'),
-            ('POST', '/dna/intent/api/v1/template-programmer/project', {'name': 'Test Project', 'description': 'Test template project created using automation'})
+            ('POST', '/dna/intent/api/v1/template-programmer/project', {'name': 'Test Project', 'description': 'Test template project created using automation'}),
+            ('GET', '/dna/intent/api/v1/site'),
+            ('GET', '/dna/intent/api/v1/network-device')
         ])
     except:
         raise
     else:
-        print(project_resp)
+        print(task_response_list)
