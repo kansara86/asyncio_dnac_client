@@ -15,13 +15,10 @@ DNA-Center REST APIs are used to programmatically configure and gather network i
 
 ## Usage
 
-* Provide the DNA-Center controller details in config.ini
-* Instantiate the DnacHttpSession class in the python script
-* The REST API call details are entered as a list of tuples to the create_rest_api_tasks method of DnacHttpSession object
-
-## Known issues
-
-Please make sure that the versions of the source and the destination vManage controllers are the same, as the template contents may vary based on the feature set supported in the specific version
+* The DNA-Center controller details should be provided in the config.ini file
+* The DnacHttpSession class is instantiated in asyncio_dnac_client.py file
+* The REST API call details are entered as a list of tuples to the create_rest_api_tasks method of DnacHttpSession object in asyncio_dnac_client.py file
+* Run 'python asyncio_dnac_client.py' to execute the code
 
 ## Getting help
 
